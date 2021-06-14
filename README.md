@@ -1,9 +1,11 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- João Pedro Martins Gontijo 
+- Pamela Rane
+- Rodrigo Brezolin Buquera
+- Silvio Gabriel Pimentel Dias 
+ 
 
 Link do Surge: www.link.com.br
 
