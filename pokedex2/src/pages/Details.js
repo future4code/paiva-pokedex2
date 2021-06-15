@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Header } from '../components/header/header'
 import { goToHome } from '../router/Coordinator';
@@ -18,3 +19,4 @@ const Details = () => {
 }
 
 export default Details
+
