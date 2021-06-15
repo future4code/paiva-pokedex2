@@ -1,20 +1,18 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { BASE_URL } from "../constance/url"
+import { BASE_URL } from "../constant/url"
 
 const usePokemon = () => {
     const [pokemon,setPokemon] = useState([{}])
 
     const getPokemon = () => {
-        console.log(`${BASE_URL}?limit=0&offset=20`)
         axios
-        .get(BASE_URL)
+        .get(`${BASE_URL}?limit=20&offset=0`)
         .then((response) => {
-            setPokemon(response.data.response)
-            console.log(pokemon)
+            setPokemon(response.data.results)
         })
         .catch((err) => {
-            alert(err)
+            alert(err.message)
         })
     }
 

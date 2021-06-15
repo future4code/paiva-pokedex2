@@ -1,25 +1,25 @@
-import React from 'react'
+
+import React, { useState } from 'react'
 import useDetails from '../hooks/useDetails'
 import usePokemon from '../hooks/usePokemon'
 
 const Pokedex = () => {
-    const [details,getPokeDetail] = useDetails()
+    const [pokeDetails] = useDetails()
 
-    const pokemon = usePokemon()
+    const listPokemon = pokeDetails.map((poke) => {
+        return  (
+            <div>
+                <h2>{poke.name}</h2>
+                <img src = {poke.sprites.front_default}/>
+            </div>
 
-    console.log(pokemon)
+        )
 
-    // const listPokemon = pokemon.map((poke) => {
-    //     return(
-    //         <div>
-    //             <h2>{poke}</h2>
-    //         </div>
-    //     )
-    // })
+    })
     
     return (
         <div>
-            {/* {listPokemon} */}
+            {listPokemon}
         </div>
     )
 }
