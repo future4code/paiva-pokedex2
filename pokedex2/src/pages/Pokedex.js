@@ -1,23 +1,24 @@
-import React from 'react'
-import { Header } from '../components/header/header'
-import { goToHome } from '../router/Coordinator';
-import { useHistory } from "react-router-dom";
-import PokeCard from '../components/PokeCard/PokeCard'
+import React, { useState } from 'react'
+import useDetails from '../hooks/useDetails'
+import usePokemon from '../hooks/usePokemon'
 
 const Pokedex = () => {
-    const history = useHistory();
+    const [pokeDetails] = useDetails()
+
+    const listPokemon = pokeDetails.map((poke) => {
+        return  (
+            <div>
+                <h2>{poke.name}</h2>
+                <img src = {poke.sprites.front_default}/>
+            </div>
+
+        )
+
+    })
+    
     return (
         <div>
-
-            <PokeCard/>
-
-            <Header>
-                <button onClick={()=> goToHome(history)}>Voltar para a lista de pokemons</button> 
-                <h3>Nome do pokemon</h3>
-            </Header>
-           <PokeCard/>
-            Pokedex
-
+            {listPokemon}
         </div>
     )
 }
