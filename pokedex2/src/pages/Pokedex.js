@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import useDetails from '../hooks/useDetails'
 import usePokemon from '../hooks/usePokemon'
