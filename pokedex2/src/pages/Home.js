@@ -2,9 +2,7 @@ import React from 'react'
 import { Header } from '../components/header/header'
 import { useHistory } from "react-router-dom";
 import { goToPokedex } from "../router/Coordinator";
-import PokeCard from '../components/PokeCard/PokeCard';
-
-
+import ScreenPokemon from '../screens/screenPokemon';
 
 const Home = () => {
     const history = useHistory();
@@ -14,8 +12,7 @@ const Home = () => {
                 <button onClick={()=>{goToPokedex(history) }} >Pokedex </button> 
                 <h3>Lista de pokemon</h3>
             </Header>
-            Home
-           <PokeCard/>
+            <ScreenPokemon/>
         </div>
     )
 }

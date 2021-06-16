@@ -3,6 +3,7 @@ import React from 'react'
 import { Header } from '../components/header/header'
 import { goToHome } from '../router/Coordinator';
 import { useHistory } from "react-router-dom";
+import ScreenDetails from '../screens/screenDetails';
 
 const Details = () => {
     const history = useHistory();
@@ -13,7 +14,7 @@ const Details = () => {
                 <h3>Nome do pokemon</h3>
                 <button>Adicionar/Remover da pokedex</button> 
             </Header>
-            Details 
+            <ScreenDetails/>
         </div>
     )
 }

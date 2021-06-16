@@ -25,7 +25,7 @@ const CardArea = styled.div`
 `
 
 
-const Details = (props) => {
+const ScreenDetails = (props) => {
     return (
         <Div>
             <CardArea imageCard> 
@@ -54,4 +54,4 @@ const Details = (props) => {
     )
 }
 
-export default Details
+export default ScreenDetails
