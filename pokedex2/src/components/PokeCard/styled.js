@@ -15,7 +15,7 @@ align-items: center;
 `
 
 export const PokeImg = styled.img`
-height: 50%;
+height: 20vh;
 `
 
 export const ButtonContainer = styled.div `
