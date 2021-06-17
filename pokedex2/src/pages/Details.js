@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Header } from '../components/header/header'
-import { goToHome } from '../router/Coordinator';
+import { goTo } from '../router/Coordinator';
 import { useHistory } from "react-router-dom";
 import ScreenDetails from '../screens/screenDetails';
 
@@ -10,7 +10,7 @@ const Details = () => {
     return (
         <div>
            <Header>
-                <button onClick={() => goToHome(history)}>Voltar</button> 
+                <button onClick={() => goTo(history, "/")}>Voltar</button> 
                 <h3>Nome do pokemon</h3>
                 <button>Adicionar/Remover da pokedex</button> 
             </Header>
