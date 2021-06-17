@@ -6,11 +6,16 @@ import { GlobalStateContext } from '../../global/GlobalStateContext'
 
 const PokeCard = (props) => {
     const {pokedex, setPokedex} = useContext(GlobalStateContext)
-        
+      
     const addPokemon = (name, image) => {
         const poke = {name: name, image: image }
         setPokedex([...pokedex, poke])        
     }
+
+    const removePokemom = (poke) => {
+        const newPokedex =  pokedex.filter(pokemon => pokemon.name !== poke )
+        setPokedex(newPokedex) 
+     }
 
     return (
         <CardContainer>
@@ -21,8 +26,8 @@ const PokeCard = (props) => {
              />
             </ImgContainer>
             <ButtonContainer>
-                <button onClick={()=> addPokemon(props.name, props.pokeImg)} >Adicionar a Pokedex</button>
-                <button>Detalhes</button>
+                <button onClick={()=> props.pokedex ? (removePokemom(props.name)) : (addPokemon(props.name, props.pokeImg))} >Adicionar a Pokedex</button>
+                <button onClick = {}>Detalhes</button>
             </ButtonContainer>
         </CardContainer>
     )
