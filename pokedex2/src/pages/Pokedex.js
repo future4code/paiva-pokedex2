@@ -3,7 +3,7 @@ import { Header } from '../components/header/header'
 import { goToHome } from '../router/Coordinator';
 import { useHistory } from "react-router-dom";
 import { GlobalStateContext } from '../global/GlobalStateContext'
-import PokeCardDetails from '../components/pokeCardDetails/pokeCardDetails';
+import PokeCard from '../components/PokeCard/PokeCard'
 
 const Pokedex = (props) => {
     const { pokedex, setPokedex } = useContext(GlobalStateContext)
@@ -12,7 +12,7 @@ const Pokedex = (props) => {
     const PokedexList = pokedex.map((poke) => {
         return (
 
-            <PokeCardDetails
+            <PokeCard
                 name={poke.name}
                 img={poke.image}
             />

@@ -4,3 +4,4 @@ export const AreaHome = styled.div`
     display:flex;
     justify-content: center;
 `
+
