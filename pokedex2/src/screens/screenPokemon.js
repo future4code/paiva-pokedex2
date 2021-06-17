@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { GlobalStateContext } from '../global/GlobalStateContext';
 import PokeCard from '../components/PokeCard/PokeCard';
+import RenderPagination from '../components/Pagination/Pagination';
 
 const ScreenPokemon = (props) => {
     const {pokeDetails} = useContext(GlobalStateContext)
@@ -20,7 +21,8 @@ const ScreenPokemon = (props) => {
 
     return (
         <div>
-            {listPokemon.length ? listPokemon : "Carregando"}
+            {listPokemon.length ? listPokemon : "Carregando"}   
+            <RenderPagination/>
         </div>
     )
 }
