@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { spriteSize } from '../../constant/spriteSize';
 
 export const CardContainer = styled.div `
     height: 30vh;
@@ -15,7 +16,7 @@ align-items: center;
 `
 
 export const PokeImg = styled.img`
-height: 20vh;
+height: ${spriteSize};
 `
 
 export const ButtonContainer = styled.div `
