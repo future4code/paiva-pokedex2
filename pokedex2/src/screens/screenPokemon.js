@@ -10,6 +10,7 @@ const ScreenPokemon = (props) => {
             
             <div>
                 <PokeCard
+                key={poke.name}
                 name = {poke.name}
                 pokeImg = {poke.sprites.front_default}
                 />

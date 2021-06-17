@@ -1,7 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { CardContainer, ImgContainer, PokeImg, ButtonContainer } from './styled'
+import { GlobalStateContext } from '../../global/GlobalStateContext'
+
+
 
 const PokeCard = (props) => {
+    const {pokedex, setPokedex} = useContext(GlobalStateContext)
+        
+    const addPokemon = (name, image) => {
+        const poke = {name: name, image: image }
+        setPokedex([...pokedex, poke])        
+    }
+
     return (
         <CardContainer>
             <ImgContainer>
@@ -11,7 +21,7 @@ const PokeCard = (props) => {
              />
             </ImgContainer>
             <ButtonContainer>
-                <button>Adicionar a Pokedex</button>
+                <button onClick={()=> addPokemon(props.name, props.pokeImg)} >Adicionar a Pokedex</button>
                 <button>Detalhes</button>
             </ButtonContainer>
         </CardContainer>

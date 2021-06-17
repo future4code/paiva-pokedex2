@@ -25,32 +25,6 @@ const GlobalState = (props) => {
             })
     }
 
-    // tentativa de fazer mais rapido, mas não está funcionando, as vezes vai e outras não
-
-    // const getPokeDetail = () => {
-        
-    //     pokemon.forEach((poke) => {
-    //         axios.get(`${poke.url}`)
-    //             .then((res) => {
-                   
-    //                 const pokedata = { name: res.data.name, img: res.data.sprites.front_default }
-    //                 console.log("pokedata", pokedata)
-                    
-    //                 setPokeDetails([...pokeDetails, pokedata])
-
-    //             })
-    //             .catch((err) => {
-    //                 console.log(err.message)
-    //             })
-
-
-    //     })
-
-    //     console.log("pokeDetails", pokeDetails)
-
-    // }
-
-    // Forma muito lenta, muitas informações
 
     const getPokeDetail = (name) => {
         const detailList = []
@@ -84,7 +58,7 @@ const GlobalState = (props) => {
 
 
     return (
-        <GlobalStateContext.Provider value={{ pokeDetails, pokedex, setPokedex }} >
+        <GlobalStateContext.Provider value={{pokemon,setPokemon, pokeDetails, pokedex, setPokedex }} >
             {props.children}
         </GlobalStateContext.Provider>
     )
