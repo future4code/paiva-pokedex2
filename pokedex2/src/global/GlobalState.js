@@ -42,7 +42,7 @@ const GlobalState = (props) => {
                 .get(`${BASE_URL}/${poke.name}`)
                 .then((response) => {
                     detailList.push(response.data)
-                    if(detailList.length === 20){
+                    if(detailList.length === name.length){
                         const pokeOrder = detailList.sort((a,b) => {
                             return a.id - b.id
                         })
