@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import useDetails from '../hooks/useDetails'
 import ImageCard from "../components/PokeCard/ImageCard"
 import DetailsCard from '../components/PokeCard/detailsCard'
@@ -6,31 +6,39 @@ import {CardArea,Div} from "./style"
 import loading from "../Image/Loading.gif"
 import  Header  from '../components/header/Header'
 import { GlobalStateContext } from '../global/GlobalStateContext'
+import ScreenBattle from './screenBattle'
 
 
 
 const ScreenDetails = (props) => {
     
     const [pokeDetails,getPokeDetail] = useDetails()
+    const [batalha,setBatalha] = useState(false)
     const {Capitalize} = useContext(GlobalStateContext)
-
+    let pokemon = {}
     useEffect(() => {
         getPokeDetail(props.name)
     }, [])
 
-    const statsList = pokeDetails.stats && pokeDetails.stats.map((stat) => {
+    if(!batalha){
+        pokemon = pokeDetails
+    }
+
+    console.log(batalha)
+
+    const statsList = pokemon.stats && pokemon.stats.map((stat) => {
         return(
             <p>{Capitalize(stat.stat.name)}: {stat.base_stat}</p>
         )
     })
 
-    const typeList = pokeDetails.types && pokeDetails.types.map((type) => {
+    const typeList = pokemon.types && pokemon.types.map((type) => {
         return(
             <p>{Capitalize(type.type.name)}</p>
         )
     })
 
-    const moveList = pokeDetails.moves && pokeDetails.moves.slice(0,4).map((move) => {
+    const moveList = pokemon.moves && pokemon.moves.slice(0,4).map((move) => {
         return(
             <p>{Capitalize(move.move.name)}</p>
         )
@@ -42,16 +50,16 @@ const ScreenDetails = (props) => {
             <Header
             pagina = "Detalhes"
             h = {props.history}
-            name = {pokeDetails.name}
-            pokeImg = {pokeDetails.sprites && pokeDetails.sprites.front_default}
+            name = {pokemon.name}
+            pokeImg = {pokemon.sprites && pokemon.sprites.front_default}
             />
             <Div>  
 
-                <h1>{pokeDetails.name && Capitalize(pokeDetails.name)}</h1>
+                <h1>{pokemon.name && Capitalize(pokemon.name)}</h1>
 
                 <CardArea imageCard>
-                        <ImageCard  img = {pokeDetails.sprites? (pokeDetails.sprites.front_default):loading} />
-                        <ImageCard  img = {pokeDetails.sprites? (pokeDetails.sprites.back_default):loading} />
+                        <ImageCard  img = {pokemon.sprites? (pokemon.sprites.front_default):loading} />
+                        <ImageCard  img = {pokemon.sprites? (pokemon.sprites.back_default):loading} />
 
                 </CardArea>
 
@@ -74,7 +82,6 @@ const ScreenDetails = (props) => {
                     />
                 </CardArea>
             </Div>
-
         </div>
         
     )
