@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { spriteSize } from "../constant/spriteSize"
 
 export const AreaPokeCards = styled.div`
     display: grid;
@@ -7,9 +8,9 @@ export const AreaPokeCards = styled.div`
 `
 
 export const AreaCard = styled.div`
-display:grid;
-grid-template-columns: 2fr 2fr 2fr;
-grid-template-rows: auto;
+    display:grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: auto;
 `
 
 export const CardArea = styled.div`
@@ -22,4 +23,29 @@ export const Div = styled.div`
     justify-content: space-between;
     height:100%;
     padding:2rem;
+`
+
+export const ImageLoading = styled.img`
+    height: ${spriteSize};
+`
+
+export const PaginationArea = styled.div`
+    display:flex;
+    flex-wrap: wrap;
+    width:50vw;
+
+    button{
+        color:red;
+        background: none;
+        border: none;
+        font-size: x-large;
+        margin-right:1rem;
+
+        :hover{
+            color:blue;
+            cursor:pointer;
+            top: 1rem;
+        }
+    }
+
 `

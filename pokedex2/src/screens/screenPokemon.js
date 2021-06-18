@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { GlobalStateContext } from '../global/GlobalStateContext';
 import PokeCard from '../components/PokeCard/PokeCard';
 import RenderPagination from '../components/Pagination/Pagination';
-import {AreaPokeCards} from "./style"
+import {AreaPokeCards,PaginationArea,ImageLoading} from "./style"
+import loading from "../Image/Loading.gif"
 
 const ScreenPokemon = (props) => {
     const {pokeDetails} = useContext(GlobalStateContext)
@@ -20,12 +21,24 @@ const ScreenPokemon = (props) => {
         )
     })
 
+    if(!listPokemon.length){
+        return(
+            <div>
+                <ImageLoading src = {loading} />
+            </div>
+        )
+    }
+
     return (
         <div>
         <AreaPokeCards>
-            {listPokemon.length ? listPokemon : "Carregando"}  
+            {listPokemon}  
         </AreaPokeCards>
+
+        <PaginationArea>
             <RenderPagination/>
+        </PaginationArea>
+
         </div>
 
 

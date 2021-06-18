@@ -1,71 +1,81 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
 import useDetails from '../hooks/useDetails'
 import ImageCard from "../components/PokeCard/ImageCard"
 import DetailsCard from '../components/PokeCard/detailsCard'
 import {CardArea,Div} from "./style"
 import loading from "../Image/Loading.gif"
+import  Header  from '../components/header/Header'
+import { GlobalStateContext } from '../global/GlobalStateContext'
 
 
 
 const ScreenDetails = (props) => {
     
     const [pokeDetails,getPokeDetail] = useDetails()
-
-    const params = useParams()
+    const {Capitalize} = useContext(GlobalStateContext)
 
     useEffect(() => {
-        getPokeDetail(params.name)
+        getPokeDetail(props.name)
     }, [])
 
     const statsList = pokeDetails.stats && pokeDetails.stats.map((stat) => {
         return(
-            <p>{stat.stat.name}:{stat.base_stat}</p>
+            <p>{Capitalize(stat.stat.name)}: {stat.base_stat}</p>
         )
     })
 
     const typeList = pokeDetails.types && pokeDetails.types.map((type) => {
         return(
-            <p>{type.type.name}</p>
+            <p>{Capitalize(type.type.name)}</p>
         )
     })
 
     const moveList = pokeDetails.moves && pokeDetails.moves.slice(0,4).map((move) => {
         return(
-            <p>{move.move.name}</p>
+            <p>{Capitalize(move.move.name)}</p>
         )
        
     })
 
     return (
-        <Div>  
-            <h1>{pokeDetails.name && pokeDetails.name}</h1>
+        <div>
+            <Header
+            pagina = "Detalhes"
+            h = {props.history}
+            name = {pokeDetails.name}
+            pokeImg = {pokeDetails.sprites && pokeDetails.sprites.front_default}
+            />
+            <Div>  
 
-            <CardArea imageCard>
-                    <ImageCard id="front" img = {pokeDetails.sprites? (pokeDetails.sprites.front_default):loading} />
-                    <ImageCard id="front" img = {pokeDetails.sprites? (pokeDetails.sprites.back_default):loading} />
+                <h1>{pokeDetails.name && Capitalize(pokeDetails.name)}</h1>
 
-            </CardArea>
+                <CardArea imageCard>
+                        <ImageCard  img = {pokeDetails.sprites? (pokeDetails.sprites.front_default):loading} />
+                        <ImageCard  img = {pokeDetails.sprites? (pokeDetails.sprites.back_default):loading} />
 
-            <CardArea>
-                <DetailsCard
-                    titulo = "Stats"
-                    content = {statsList}
-                />
-            </CardArea>
+                </CardArea>
 
-            <CardArea>
-                <DetailsCard
-                    titulo = "Tipos"
-                    content = {typeList}
-                    detailType = "tipo"
-                />
-                <DetailsCard
-                    titulo = "Moves"
-                    content = {moveList}
-                />
-            </CardArea>
-        </Div>
+                <CardArea>
+                    <DetailsCard
+                        titulo = "Stats"
+                        content = {statsList}
+                    />
+                </CardArea>
+
+                <CardArea>
+                    <DetailsCard
+                        titulo = "Tipos"
+                        content = {typeList}
+                        detailType = "tipo"
+                    />
+                    <DetailsCard
+                        titulo = "Moves"
+                        content = {moveList}
+                    />
+                </CardArea>
+            </Div>
+
+        </div>
         
     )
 }
