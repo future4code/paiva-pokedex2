@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react'
-import {HeaderArea} from "./style"
+import {HeaderArea, LeftHeader, RightButton} from "./style"
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { useHistory } from 'react-router-dom'
 import {goTo, toBack} from "../../router/Coordinator"
@@ -43,17 +43,17 @@ function Header(props) {
                 )}
 
                 {props.pagina !== "Pokedex" && (
-                    <button onClick={() => goTo(props.h,"/pokedex")}>
-                        Pokedex
-                    </button> 
+                    <LeftHeader onClick={() => goTo(props.h,"/pokedex")}>
+                        Ir para Pokedex
+                    </LeftHeader> 
                 )}
 
                 <h3>{props.pagina}</h3>
                 {props.pagina === "Detalhes" && ( 
-                    <button onClick={()=> checkPokedex() ?
+                    <RightButton onClick={()=> checkPokedex() ?
                      (removePokemom(props.name)) : 
                      (addPokemon(props.name, props.pokeImg))} >
-                         {checkPokedex() ? "Remover da Pokedex":"Adicionar a Pokedex"}</button>)}
+                         {checkPokedex() ? "Remover da Pokedex":"Adicionar a Pokedex"}</RightButton>)}
               
             </HeaderArea>
     )

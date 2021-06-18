@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { gray, laserLemon, orangeRed, } from '../../constant/colors';
 import { spriteSize } from '../../constant/spriteSize';
 
 export const CardContainer = styled.div`
@@ -6,9 +7,10 @@ export const CardContainer = styled.div`
     margin: 10px;
     display: grid;
     grid-template-rows: 80% 20%;
+    background-color: ${gray};
 `
 export const ImgContainer = styled.div(({inPokedex}) =>  `
-    background-color: ${inPokedex ? "green":"#FFFFD2"};
+    background-color: ${inPokedex ? gray:gray};
     display: grid;
     grid-template-rows: 50% 50%;
     justify-items: center;
@@ -18,16 +20,18 @@ export const ImgContainer = styled.div(({inPokedex}) =>  `
 export const PokeImg = styled.img`
     height: ${spriteSize};
     margin:1rem;
+    background-color:${gray};
 `
 
 export const ButtonContainer = styled.div `
     display: flex;
-    justify-content: flex-end;
+    justify-content:space-between;
+    
 `
 
 export const CardDetails = styled.div`
     padding: 1rem;
-    background-color: red;
+    background-color: ${gray};
     margin-bottom: 1rem;
     height:100%;
 `
@@ -46,35 +50,37 @@ export const ButtonPokedex = styled.div`
     padding:1rem;
     width:100%;
     display: flex;
-    justify-content:space-between ;
+    justify-content:center ;
 `
 
 export const ChangePokedex = styled.button(({inPokedex}) => `
-    height:40px;
-    width: 40px;
-    border-radius: 50%;
+    height:100%;
+    width: 50%;
+    border-radius: 5%;
     border:${inPokedex ? "red":"green"};
-    background-color:white;
-    color: ${inPokedex ? "red":"green"};
-    font-size: xx-large;
-    transition: 0.5s;
+    border: 1px solid black;
+    background-color:${gray};
+
 
     :hover{
-        background-color: ${inPokedex ? "red":"green"};
+        background-color: ${inPokedex ? orangeRed:"green"};
         color:white;
+        transition: 0.5s;
+        cursor:pointer;
     }
 `)
 
 export const DetailsButton = styled.button`
-    height:60%;
+    height:100%;
     width: 50%;
     border:1px solid black;
     border-radius: 5%;
-    background:none;
+    background:${gray};
     font-size: medium;
 
     :hover{
-        cursor:pointer
+        background-color:${laserLemon};
+        cursor:pointer;
     }
 
 `

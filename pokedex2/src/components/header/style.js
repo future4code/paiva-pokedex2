@@ -1,11 +1,26 @@
 import styled from "styled-components"
+import {  orangeRed,} from "../../constant/colors"
 
 export const HeaderArea = styled.div`
-width:100vw;
 height: 4em;
-background-color: #ff4f3d;
-display:grid;
-grid-template-columns: 1fr 2fr 1fr ;
+background-color: ${orangeRed};
+display: flex;
 align-items:center;
-justify-items: space-evenly;
+justify-content: center;
+color: white;
+position: relative;
 ` 
+export const LeftHeader = styled.button`
+  position: absolute;
+  left: 10px;
+`;
+
+export const LeftHeader2 = styled.button`
+  position: absolute;
+  left: 60px;
+`;
+
+export const RightButton = styled.button`
+  position: absolute;
+  right: 10px;
+`;

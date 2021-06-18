@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
-import Header from '../components/header/Header'
+import Header from '../components/Header/header'
 import { goTo } from '../router/Coordinator';
 import { useHistory } from "react-router-dom";
 import { GlobalStateContext } from '../global/GlobalStateContext'
 import PokeCard from '../components/PokeCard/PokeCard'
+import { AreaHome } from './style';
+import { AreaPokeCards } from '../screens/style';
 
 const Pokedex = (props) => {
     const { pokedex, setPokedex } = useContext(GlobalStateContext)
@@ -29,7 +31,12 @@ const Pokedex = (props) => {
             pagina = "Pokedex"
             h = {history}
             />
-            {PokedexList.length ? PokedexList : "nada na pokedex"}
+            <AreaHome>
+            <AreaPokeCards>
+            {PokedexList.length ? PokedexList : "Nada na pokedex"}
+            </AreaPokeCards>
+            </AreaHome>
+           
         </div>
     )
 }
