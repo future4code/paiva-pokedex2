@@ -62,9 +62,13 @@ const GlobalState = (props) => {
         
     }, [pokemon])
 
+    const Capitalize = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+        }   
+
 
     return (
-        <GlobalStateContext.Provider value={{pokemon,setPokemon, pokeDetails, pokedex, setPokedex,setPageNumber }} >
+        <GlobalStateContext.Provider value={{pokemon,setPokemon, pokeDetails, pokedex, setPokedex,setPageNumber,Capitalize }} >
             {props.children}
         </GlobalStateContext.Provider>
     )

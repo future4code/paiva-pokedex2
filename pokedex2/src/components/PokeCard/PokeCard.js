@@ -1,11 +1,13 @@
 import React, {useContext, useEffect} from 'react'
-import { CardContainer, ImgContainer, PokeImg, ButtonContainer } from './styled'
+import { CardContainer, ImgContainer, PokeImg,
+        ButtonContainer,ChangePokedex,DetailsButton,
+        ButtonPokedex,PokeName } from './styled'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { goTo } from '../../router/Coordinator'
 import { useHistory } from 'react-router-dom'
 
 const PokeCard = (props) => {
-    const {pokedex, setPokedex} = useContext(GlobalStateContext)
+    const {pokedex, setPokedex,Capitalize} = useContext(GlobalStateContext)
     const history = useHistory()
 
     useEffect(() => {
@@ -30,17 +32,24 @@ const PokeCard = (props) => {
         setPokedex(newPokedex) 
      }
 
+
     return (
         <CardContainer>
-            <ImgContainer>
+            <ImgContainer inPokedex = {checkPokedex()}>
+            <ButtonPokedex>
+                <PokeName>
+                    <h3>{Capitalize(props.name)}</h3>
+                </PokeName>
+                <ChangePokedex inPokedex = {checkPokedex()} onClick={()=> checkPokedex() ? (removePokemom(props.name)) : (addPokemon(props.name, props.pokeImg))} >{checkPokedex() ? "-":"+"}</ChangePokedex>
+            </ButtonPokedex>
             <PokeImg
-            src= {props.pokeImg}
-            alt= {props.name}
+                src= {props.pokeImg}
+                alt= {props.name}
              />
+
             </ImgContainer>
             <ButtonContainer>
-                <button onClick={()=> checkPokedex() ? (removePokemom(props.name)) : (addPokemon(props.name, props.pokeImg))} >{checkPokedex() ? "Remover da Pokedex":"Adicionar a Pokedex"}</button>
-                <button onClick = {() => goTo(history,`/details/${props.name}`)}>Detalhes</button>
+                <DetailsButton onClick = {() => goTo(history,`/details/${props.name}`)}>Detalhes</DetailsButton>
             </ButtonContainer>
         </CardContainer>
     )
