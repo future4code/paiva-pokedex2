@@ -5,6 +5,7 @@ import ImageCard from "../components/PokeCard/ImageCard"
 import DetailsCard from '../components/PokeCard/detailsCard'
 import {CardArea,Div} from "./style"
 import loading from "../Image/Loading.gif"
+import  Header  from '../components/header/Header'
 
 
 
@@ -12,10 +13,10 @@ const ScreenDetails = (props) => {
     
     const [pokeDetails,getPokeDetail] = useDetails()
 
-    const params = useParams()
+
 
     useEffect(() => {
-        getPokeDetail(params.name)
+        getPokeDetail(props.name)
     }, [])
 
     const statsList = pokeDetails.stats && pokeDetails.stats.map((stat) => {
@@ -38,34 +39,44 @@ const ScreenDetails = (props) => {
     })
 
     return (
-        <Div>  
-            <h1>{pokeDetails.name && pokeDetails.name}</h1>
+        <div>
+            <Header
+            pagina = "Detalhes"
+            h = {props.history}
+            name = {pokeDetails.name}
+            pokeImg = {pokeDetails.sprites && pokeDetails.sprites.front_default}
+            />
+            <Div>  
 
-            <CardArea imageCard>
-                    <ImageCard id="front" img = {pokeDetails.sprites? (pokeDetails.sprites.front_default):loading} />
-                    <ImageCard id="front" img = {pokeDetails.sprites? (pokeDetails.sprites.back_default):loading} />
+                <h1>{pokeDetails.name && pokeDetails.name}</h1>
 
-            </CardArea>
+                <CardArea imageCard>
+                        <ImageCard  img = {pokeDetails.sprites? (pokeDetails.sprites.front_default):loading} />
+                        <ImageCard  img = {pokeDetails.sprites? (pokeDetails.sprites.back_default):loading} />
 
-            <CardArea>
-                <DetailsCard
-                    titulo = "Stats"
-                    content = {statsList}
-                />
-            </CardArea>
+                </CardArea>
 
-            <CardArea>
-                <DetailsCard
-                    titulo = "Tipos"
-                    content = {typeList}
-                    detailType = "tipo"
-                />
-                <DetailsCard
-                    titulo = "Moves"
-                    content = {moveList}
-                />
-            </CardArea>
-        </Div>
+                <CardArea>
+                    <DetailsCard
+                        titulo = "Stats"
+                        content = {statsList}
+                    />
+                </CardArea>
+
+                <CardArea>
+                    <DetailsCard
+                        titulo = "Tipos"
+                        content = {typeList}
+                        detailType = "tipo"
+                    />
+                    <DetailsCard
+                        titulo = "Moves"
+                        content = {moveList}
+                    />
+                </CardArea>
+            </Div>
+
+        </div>
         
     )
 }

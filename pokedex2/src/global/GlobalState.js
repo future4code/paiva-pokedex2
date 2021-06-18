@@ -15,6 +15,7 @@ const GlobalState = (props) => {
     }, [pageNumber])
 
     const getPokemon = (pageNumber) => {
+        setPokeDetails([])
         let offset = 0
         if(pageNumber > 1){
             offset = (20*pageNumber) -20

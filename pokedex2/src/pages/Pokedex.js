@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Header } from '../components/header/header'
+import Header from '../components/header/Header'
 import { goTo } from '../router/Coordinator';
 import { useHistory } from "react-router-dom";
 import { GlobalStateContext } from '../global/GlobalStateContext'
@@ -9,23 +9,26 @@ const Pokedex = (props) => {
     const { pokedex, setPokedex } = useContext(GlobalStateContext)
     const history = useHistory();
 
+    console.log(pokedex)
+
     const PokedexList = pokedex.map((poke) => {
         return (
 
             <PokeCard
                 name={poke.name}
                 img={poke.image}
+                pokeName = {poke.name}
+                pokeImg = {poke.image}
             />
         )
     })
 
     return (
         <div>
-            <Header>
-                <button onClick={() => goTo(history, "/")}>Voltar para a lista de pokemons</button>
-                <h3>Nome do pokemon</h3>
-            </Header>
-
+            <Header
+            pagina = "Pokedex"
+            h = {history}
+            />
             {PokedexList.length ? PokedexList : "nada na pokedex"}
         </div>
     )
