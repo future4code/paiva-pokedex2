@@ -10,11 +10,13 @@ const useDetails = () => {
         .get(`${BASE_URL}/${name}`)
         .then((response) => {
             setPokeDetails(response.data)
+
         })
         .catch((err) => {
             alert(err.message)
         })
     } 
+
 
    return [pokeDetails, getPokeDetail]
 
