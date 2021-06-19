@@ -4,7 +4,7 @@ import ImageCard from "../components/PokeCard/ImageCard"
 import DetailsCard from '../components/PokeCard/detailsCard'
 import {CardArea,Div} from "./style"
 import loading from "../Image/Loading.gif"
-import  Header  from '../components/Header/header'
+import Header from "../components/header/header"
 import { GlobalStateContext } from '../global/GlobalStateContext'
 import ScreenBattle from './screenBattle'
 
