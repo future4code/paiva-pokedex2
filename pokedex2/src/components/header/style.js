@@ -12,15 +12,15 @@ position: relative;
 ` 
 export const LeftHeader = styled.button`
   position: absolute;
-  left: 10px;
+  left: 1em;
 `;
 
 export const LeftHeader2 = styled.button`
   position: absolute;
-  left: 60px;
+  left: 9em;
 `;
 
 export const RightButton = styled.button`
   position: absolute;
-  right: 10px;
+  right: 1em;
 `;

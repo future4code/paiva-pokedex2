@@ -81,6 +81,7 @@ export const DetailsButton = styled.button`
     :hover{
         background-color:${laserLemon};
         cursor:pointer;
+        transition: 0.5s;
     }
 
 `

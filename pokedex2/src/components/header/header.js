@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react'
-import {HeaderArea, LeftHeader, RightButton} from "./style"
+import {HeaderArea, LeftHeader, RightButton, LeftHeader2} from "./style"
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { useHistory } from 'react-router-dom'
 import {goTo, toBack} from "../../router/Coordinator"
@@ -35,9 +35,9 @@ function Header(props) {
             <HeaderArea>
                 {props.pagina !== "Home" && (
 
-                    <button onClick={() => toBack(props.h)}>
+                    <LeftHeader2 onClick={() => toBack(props.h)}>
                         Voltar
-                    </button> 
+                    </LeftHeader2> 
 
                     
                 )}

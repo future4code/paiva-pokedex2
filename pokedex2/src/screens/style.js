@@ -53,6 +53,6 @@ export const PaginationArea = styled.div`
     }
 
 `
-export const backGroundBody = styled.body`
+export const backGroundBody = styled.main`
 background-color: ${cream};
 `

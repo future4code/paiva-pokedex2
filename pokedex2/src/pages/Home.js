@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <Header
-            pagina = "Home"
+            pagina = "Lista de Pokemons"
             h = {history}
             />
             <AreaHome>
