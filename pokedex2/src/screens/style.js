@@ -1,5 +1,8 @@
 import styled from "styled-components"
+import { cream } from "../constant/colors"
 import { spriteSize } from "../constant/spriteSize"
+
+
 
 export const AreaPokeCards = styled.div`
     display: grid;
@@ -18,11 +21,12 @@ export const CardArea = styled.div`
     height:100%;
 `
 
-export const Div = styled.div`
+export const Div = styled.main`
     display:flex;
     justify-content: space-between;
     height:100%;
     padding:2rem;
+    background-color:${cream} ;
 `
 
 export const ImageLoading = styled.img`
@@ -48,4 +52,7 @@ export const PaginationArea = styled.div`
         }
     }
 
+`
+export const backGroundBody = styled.body`
+background-color: ${cream};
 `

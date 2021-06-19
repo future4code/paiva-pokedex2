@@ -40,8 +40,7 @@ const PokeCard = (props) => {
                 <PokeName>
                     <h3>{Capitalize(props.name)}</h3>
                 </PokeName>
-                <ChangePokedex inPokedex = {checkPokedex()} onClick={()=> checkPokedex() ? (removePokemom(props.name)) : (addPokemon(props.name, props.pokeImg))} >{checkPokedex() ? "-":"+"}</ChangePokedex>
-            </ButtonPokedex>
+                </ButtonPokedex>
             <PokeImg
                 src= {props.pokeImg}
                 alt= {props.name}
@@ -49,6 +48,7 @@ const PokeCard = (props) => {
 
             </ImgContainer>
             <ButtonContainer>
+            <ChangePokedex inPokedex = {checkPokedex()} onClick={()=> checkPokedex() ? (removePokemom(props.name)) : (addPokemon(props.name, props.pokeImg))} >{checkPokedex() ? "Remover da Pokedex":"Adicionar à Pokedex"}</ChangePokedex>
                 <DetailsButton onClick = {() => goTo(history,`/details/${props.name}`)}>Detalhes</DetailsButton>
             </ButtonContainer>
         </CardContainer>
