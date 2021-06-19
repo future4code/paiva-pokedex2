@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 import {goTo, toBack} from "../../router/Coordinator"
 
 function Header(props) {
+    
     const {pokedex, setPokedex} = useContext(GlobalStateContext)
     const history = useHistory()
     console.log(history)

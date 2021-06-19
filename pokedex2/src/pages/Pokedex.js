@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Header from '../components/Header/header'
+import Header from "../components/header/header"
 import { goTo } from '../router/Coordinator';
 import { useHistory } from "react-router-dom";
 import { GlobalStateContext } from '../global/GlobalStateContext'
