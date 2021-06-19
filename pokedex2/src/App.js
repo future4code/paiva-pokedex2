@@ -5,7 +5,6 @@ import Routes from "./router/Routes"
 import GlobalState from './global/GlobalState';
 import { cream } from './constant/colors';
 
-
 const GlobalStyle = createGlobalStyle`*{     
   padding: 0;     
   margin: 0;     
