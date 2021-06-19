@@ -20,7 +20,7 @@ const Routes = () => {
                 <Route exact path="/details/:name" >
                     <Details />
                 </Route>
-                <Route exact path="/battle/:name" >
+                <Route exact path="/battle" >
                     <Battle />
                 </Route>
                 <Route>
