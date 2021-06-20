@@ -1,20 +1,21 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- João Pedro Martins Gontijo 
-- Pamela Rane
-- Rodrigo Brezolin Buquera
-- Silvio Gabriel Pimentel Dias 
+- João Pedro Martins Gontijo: Cards, Layout para Mobile, Organização de Projeto e Administração do Git Hub
+- Pamela Rane: Com problema no computador
+- Rodrigo Brezolin Buquera: Header
+- Silvio Gabriel Pimentel Dias: Sistema de batalha e layout para PC e Mobile da batalha, resgate de dados da API, Paginação, parte do Layout
  
 
 Link do Surge: http://obsolete-stranger.surge.sh/
 
 O que funciona:
-- Tudo pedido para a página 1
-- Tudo pedido para a página 2
-- Tudo pedido para a página 3
-- Paginação pokemons
-- Supertrunfo(batalha supertrunfo pokemons)
-- Mobile
+
+ Pokémon aparece em lista
+ É possivel ver detalhes do Pokémon
+ É possível inserir Pokémon em sua pokedex
+ Paginação funciona para toda a lista de Pokémon
+ Batalha Pokémon funcionando
+ 
 O que não funciona: 
-??
+ Paginação não apresenta número de paginas de forma dinamica
