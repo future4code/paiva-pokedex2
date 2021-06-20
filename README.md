@@ -7,12 +7,14 @@ Nome dos integrantes:
 - Silvio Gabriel Pimentel Dias 
  
 
-Link do Surge: www.link.com.br
+Link do Surge: http://obsolete-stranger.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
-
+- Tudo pedido para a página 1
+- Tudo pedido para a página 2
+- Tudo pedido para a página 3
+- Paginação pokemons
+- Supertrunfo(batalha supertrunfo pokemons)
+- Mobile
 O que não funciona: 
-- Item 3
-- Item 4
+??
