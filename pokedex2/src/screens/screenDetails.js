@@ -9,13 +9,12 @@ import { GlobalStateContext } from '../global/GlobalStateContext'
 
 const ScreenDetails = (props) => {
     
-    const [getPokeDetail] = useDetails()
+    const [pokeDetails,getPokeDetail] = useDetails()
     const {Capitalize} = useContext(GlobalStateContext)
-    let pokemon = {}
-
+    const pokemon = pokeDetails
     useEffect(() => {
         getPokeDetail(props.name)
-    }, [getPokeDetail])
+    }, [])
 
 
     const statsList = pokemon.stats && pokemon.stats.map((stat) => { // Resgata Status
