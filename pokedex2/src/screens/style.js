@@ -24,12 +24,18 @@ export const CardArea = styled.div`
     height:100%;
 `
 
-export const Div = styled.main`
+export const Div = styled.div`
     display:flex;
     justify-content: space-between;
     height:100%;
     padding:2rem;
     background-color:${cream} ;
+    align-items: center;
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `
 
 export const ImageLoading = styled.img`

@@ -11,11 +11,13 @@ function ScreenBattle(props) {
             <div>
                 <Rounds>
                     <h5>Escolha o status do seu Pokémon, se for maior que o do inimigo, você vence!!</h5>
-                    <h1>Rodadas: {rounds}</h1>
+                </Rounds>
+                <Rounds>
+                <h1>Rodadas: {rounds}</h1>
                 </Rounds>
                 
                 <Board>
-                    <h1>Ponto</h1>
+                    <h1>Pontuação</h1>
                     <Scores>
                         <Score>Jogador: {playerPoints}</Score>
                         <Score>Adversário: {enemyPoints}</Score>
