@@ -2,8 +2,6 @@ import styled from "styled-components"
 import { cream } from "../constant/colors"
 import { spriteSize } from "../constant/spriteSize"
 
-
-
 export const AreaPokeCards = styled.div`
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;

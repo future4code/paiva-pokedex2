@@ -1,10 +1,11 @@
 import React, {useContext, useEffect} from 'react'
-import { CardContainer, ImgContainer, PokeImg,
-        ButtonContainer,ChangePokedex,DetailsButton,
-        ButtonPokedex,PokeName } from './styled'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { goTo } from '../../router/Coordinator'
 import { useHistory } from 'react-router-dom'
+
+import { CardContainer, ImgContainer, PokeImg,
+    ButtonContainer,ChangePokedex,DetailsButton,
+    ButtonPokedex,PokeName } from './styled'
 
 const PokeCard = (props) => {
     const {pokedex, setPokedex,Capitalize} = useContext(GlobalStateContext)

@@ -18,27 +18,28 @@ const GlobalBattle = (props) =>{
 
     useEffect(() => {
         //Reseta funções
-        setChoiceStats([])
-        setChoiceMade(false)
-        setResponse("")
+            setChoiceStats([])
+            setChoiceMade(false)
+            setResponse("")
         //Cria Pokémon
-        const pokeJogador = Math.floor(Math.random() * 898) +1; //Gera um número aleatório para criar personagem do jogador
-        getPokeDetail(pokeJogador)
-        getEnemy()
+            const pokeJogador = Math.floor(Math.random() * 898) +1; //Gera um número aleatório para criar personagem do jogador
+            getPokeDetail(pokeJogador)
+            getEnemy()
         //Termina o jogo
-        endGame()
+            endGame()
     }, [rounds])
 
     const getEnemy = () => { //Cria a carta inimiga
         const pokeInimigo = Math.floor(Math.random() * 898)+1;
+
         axios
         .get(`${BASE_URL}/${pokeInimigo}`)
-        .then((response) => {
-            setEnemy(response.data)
-        })
-        .catch((err) => {
-            alert(err.message)
-        })
+            .then((response) => {
+                setEnemy(response.data)
+            })
+            .catch((err) => {
+                alert(err.message)
+            })
     }
 
     const pokeStats = pokeDetails.stats && pokeDetails.stats.map((stat) => { // Resgata status do pokémon do jogador
@@ -98,7 +99,8 @@ const GlobalBattle = (props) =>{
 
     const Capitalize = (str) => { //Torna a primeira letra em maiusculo 
         return str.charAt(0).toUpperCase() + str.slice(1);
-        }   
+    }   
+
     return (
         <GlobalStateBattle.Provider value={{playerPoints,response,choiceMade,enemyPoints,rounds,pokeDetails,enemy,
                                             pokeStats,choiceStats,checkStats,changeRound,Capitalize }} >
