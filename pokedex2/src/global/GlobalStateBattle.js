@@ -17,18 +17,19 @@ const GlobalBattle = (props) =>{
     const [response,setResponse] = useState("")
 
     useEffect(() => {
+        //Reseta funções
         setChoiceStats([])
         setChoiceMade(false)
         setResponse("")
-        
-        const pokeJogador = Math.floor(Math.random() * 898) +1;
+        //Cria Pokémon
+        const pokeJogador = Math.floor(Math.random() * 898) +1; //Gera um número aleatório para criar personagem do jogador
         getPokeDetail(pokeJogador)
         getEnemy()
-        
+        //Termina o jogo
         endGame()
     }, [rounds])
 
-    const getEnemy = () => {
+    const getEnemy = () => { //Cria a carta inimiga
         const pokeInimigo = Math.floor(Math.random() * 898)+1;
         axios
         .get(`${BASE_URL}/${pokeInimigo}`)
@@ -40,46 +41,46 @@ const GlobalBattle = (props) =>{
         })
     }
 
-    const pokeStats = pokeDetails.stats && pokeDetails.stats.map((stat) => {
+    const pokeStats = pokeDetails.stats && pokeDetails.stats.map((stat) => { // Resgata status do pokémon do jogador
         let status = []
         status.push(stat.base_stat)
         return status
     })
 
-    const enemyStats = enemy.stats && enemy.stats.map((stat) => {
+    const enemyStats = enemy.stats && enemy.stats.map((stat) => {  //Resgata status do inimigo 
         let status = []
         status.push(stat.base_stat)
         return status
     })
 
-    const checkStats = (i,label) => {
+    const checkStats = (i,label) => { //Verifica status escolhido pelo jogador para competir
 
-        setChoiceStats([label,enemyStats[i]])
-        setChoiceMade(true)
+        setChoiceStats([label,enemyStats[i]]) //Separa a escolha do jogador para exibir a do inimigo
+        setChoiceMade(true) //O controlador de escolha recebe true
 
         const enemy = parseInt(enemyStats[i])
         const player = parseInt(pokeStats[i])
 
-        if(enemy > player){
+        if(enemy > player){ //Caso perca
             setResponse("Você perdeu a rodada")
             return setEnemyPoints(enemyPoints + 1)
 
-        }else if(player > enemy){
+        }else if(player > enemy){ //Caso ganhe
             setResponse("Você venceu a rodada")
             return setPlayerPoints(playerPoints +1)
         
-        }else if(player === enemy){
+        }else if(player === enemy){ //Caso de empate
             return setResponse("Rodada Empatada")
         }
 
     }
 
-    const changeRound = () => {
+    const changeRound = () => { // Troca o round que controla o userEffect de cartas
         return setRounds(rounds + 1)
     }
     
-    const endGame = () => {
-        if(rounds > 10){
+    const endGame = () => {  // Termina o jogo
+        if(rounds > 10){   
 
             setPlayerPoints(0)
             setEnemyPoints(0)
@@ -95,11 +96,9 @@ const GlobalBattle = (props) =>{
 
     }
 
-    const Capitalize = (str) => {
+    const Capitalize = (str) => { //Torna a primeira letra em maiusculo 
         return str.charAt(0).toUpperCase() + str.slice(1);
         }   
-
-    console.log(enemyStats)
     return (
         <GlobalStateBattle.Provider value={{playerPoints,response,choiceMade,enemyPoints,rounds,pokeDetails,enemy,
                                             pokeStats,choiceStats,checkStats,changeRound,Capitalize }} >

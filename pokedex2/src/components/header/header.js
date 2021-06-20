@@ -8,7 +8,6 @@ function Header(props) {
     
     const {pokedex, setPokedex} = useContext(GlobalStateContext)
     const history = useHistory()
-    console.log(history)
     useEffect(() => {
         checkPokedex()
     } , [pokedex])

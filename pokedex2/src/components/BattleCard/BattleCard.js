@@ -11,25 +11,22 @@ function BattleCard(props) {
         setMobileStatus(false)
     ], [pokeDetails])
 
-    const goStatus = () => {
-        setMobileStatus(!mobileStatus)
-    }
-
-    console.log(window.innerWidth)
-
-    if(window.innerWidth < 480){
+    //Caso tela seja menor que 480(Mobile)
+    if(window.innerWidth < 480){ //Tela Mobile
         if(!mobileStatus){
             return(
+                //Area com Imagem e Nome do Pokémon
                 <CardBattle>
                     <h2>{pokeDetails.name && Capitalize(pokeDetails.name)}</h2>
                     <ImageBattle>
-                        <img src = {pokeDetails.sprites && pokeDetails.sprites.front_default}/>
+                        <img src = {pokeDetails.sprites && pokeDetails.sprites.front_default} alt = {pokeDetails.name}/>
                     </ImageBattle>
                     <button onClick = {() => setMobileStatus(!mobileStatus)}>Verificar Status</button>
                    
                 </CardBattle>
             )
         }else{
+            //Area com Status do Pokémon
             return(
                 <CardBattle>
                     <button onClick = {() => setMobileStatus(!mobileStatus)}>Verificar Pokémon</button>

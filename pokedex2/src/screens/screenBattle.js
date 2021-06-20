@@ -6,11 +6,11 @@ import {BattleArena, Rounds,Board,Scores,Score,BattleArea} from "./style"
 
 function ScreenBattle(props) {
     const {choiceMade,changeRound,playerPoints,enemyPoints,rounds,response} = useContext(GlobalStateBattle)
-    console.log(rounds)
     return (
         <BattleArea>
             <div>
                 <Rounds>
+                    <h5>Escolha o status do seu Pokémon, se for maior que o do inimigo, você vence!!</h5>
                     <h1>Rodadas: {rounds}</h1>
                 </Rounds>
                 
@@ -21,7 +21,7 @@ function ScreenBattle(props) {
                         <Score>Adversário: {enemyPoints}</Score>
                         
                     </Scores>
-                    {response != "" && <h2>{response}</h2>}
+                    {response !== "" && <h2>{response}</h2>}
                 </Board>
 
             </div>

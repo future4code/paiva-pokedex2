@@ -4,7 +4,6 @@ import { StatsSpace,StatsDiv } from "./style"
 
 function ButtonPlayer() {  
     const {pokeStats,checkStats,choiceMade} = useContext(GlobalStateBattle)
-    console.log(choiceMade)
     return (
         <StatsSpace>
             <StatsDiv disabled = {choiceMade} onClick = {() =>  checkStats(0, "HP")}><h3>HP</h3> <h3>{pokeStats && pokeStats[0]}</h3></StatsDiv>

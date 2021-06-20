@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gray, laserLemon, orangeRed, } from '../../constant/colors';
+import { dodgerBlue, gray, laserLemon, orangeRed, } from '../../constant/colors';
 import { spriteSize } from '../../constant/spriteSize';
 
 export const CardContainer = styled.div`
@@ -8,6 +8,7 @@ export const CardContainer = styled.div`
     display: grid;
     grid-template-rows: 80% 20%;
     background-color: ${gray};
+    box-shadow: 0px 0px 5px ${dodgerBlue};
 `
 export const ImgContainer = styled.div(({inPokedex}) =>  `
     background-color: ${inPokedex ? gray:gray};

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect,useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import useDetails from '../hooks/useDetails'
 import ImageCard from "../components/PokeCard/ImageCard"
 import DetailsCard from '../components/PokeCard/detailsCard'
@@ -6,39 +6,31 @@ import {CardArea,Div} from "./style"
 import loading from "../Image/Loading.gif"
 import Header from "../components/header/header"
 import { GlobalStateContext } from '../global/GlobalStateContext'
-import ScreenBattle from './screenBattle'
-
-
 
 const ScreenDetails = (props) => {
     
-    const [pokeDetails,getPokeDetail] = useDetails()
-    const [batalha,setBatalha] = useState(false)
+    const [getPokeDetail] = useDetails()
     const {Capitalize} = useContext(GlobalStateContext)
     let pokemon = {}
+
     useEffect(() => {
         getPokeDetail(props.name)
-    }, [])
+    }, [getPokeDetail])
 
-    if(!batalha){
-        pokemon = pokeDetails
-    }
 
-    console.log(batalha)
-
-    const statsList = pokemon.stats && pokemon.stats.map((stat) => {
+    const statsList = pokemon.stats && pokemon.stats.map((stat) => { // Resgata Status
         return(
             <p>{Capitalize(stat.stat.name)}: {stat.base_stat}</p>
         )
     })
 
-    const typeList = pokemon.types && pokemon.types.map((type) => {
+    const typeList = pokemon.types && pokemon.types.map((type) => { // Resgata Tipos
         return(
             <p>{Capitalize(type.type.name)}</p>
         )
     })
 
-    const moveList = pokemon.moves && pokemon.moves.slice(0,4).map((move) => {
+    const moveList = pokemon.moves && pokemon.moves.slice(0,4).map((move) => { // Resgata 4 Ataques
         return(
             <p>{Capitalize(move.move.name)}</p>
         )

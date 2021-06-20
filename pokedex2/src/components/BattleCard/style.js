@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { cream, gray, laserLemon, orangeRed } from "../../constant/colors"
+import { cream, gray, orangeRed } from "../../constant/colors"
 import { spriteSize } from "../../constant/spriteSize"
 
 export const CardBattle = styled.div`

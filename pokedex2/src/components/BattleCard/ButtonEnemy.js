@@ -4,7 +4,6 @@ import { StatsSpace,StatsDiv } from "./style"
 
 function ButtonEnemy() {  
     const {choiceStats} = useContext(GlobalStateBattle)
-    console.log(choiceStats)
     return (
         <StatsSpace>
             {choiceStats.length > 0 && (

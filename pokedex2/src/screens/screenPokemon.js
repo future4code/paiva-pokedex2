@@ -36,7 +36,7 @@ const ScreenPokemon = (props) => {
         </AreaPokeCards>
 
         <PaginationArea>
-            <RenderPagination/>
+            <RenderPagination/> 
         </PaginationArea>
 
         </div>

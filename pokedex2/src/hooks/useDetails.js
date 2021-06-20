@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { BASE_URL } from "../constant/url"
 
 const useDetails = () => {

@@ -10,7 +10,7 @@ function EnemyCard(props) {
             <h2>{enemy.name && Capitalize(enemy.name)}</h2>
 
             <ImageBattle>
-                <img src = {enemy.sprites && enemy.sprites.front_default}/>
+                <img src = {enemy.sprites && enemy.sprites.front_default} alt = {enemy.name}/>
             </ImageBattle>
 
             <ButtonEnemy

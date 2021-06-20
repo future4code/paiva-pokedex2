@@ -8,6 +8,11 @@ export const AreaPokeCards = styled.div`
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-rows: auto;
+
+    @media only screen and (max-width: 480px) {
+        display:flex;
+        flex-direction: column;
+    }
 `
 
 export const AreaCard = styled.div`
