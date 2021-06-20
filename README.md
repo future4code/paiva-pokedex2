@@ -11,11 +11,11 @@ Link do Surge: http://obsolete-stranger.surge.sh/
 
 O que funciona:
 
- Pokémon aparece em lista
- É possivel ver detalhes do Pokémon
- É possível inserir Pokémon em sua pokedex
- Paginação funciona para toda a lista de Pokémon
- Batalha Pokémon funcionando
+ - Pokémon aparece em lista
+ - É possivel ver detalhes do Pokémon
+ - É possível inserir Pokémon em sua pokedex
+ - Paginação funciona para toda a lista de Pokémon
+ - Batalha Pokémon funcionando
  
 O que não funciona: 
- Paginação não apresenta número de paginas de forma dinamica
+ -Paginação não apresenta número de paginas de forma dinamica
