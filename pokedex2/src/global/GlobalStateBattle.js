@@ -20,9 +20,12 @@ const GlobalBattle = (props) =>{
         setChoiceStats([])
         setChoiceMade(false)
         setResponse("")
+        
         const pokeJogador = Math.floor(Math.random() * 898) +1;
         getPokeDetail(pokeJogador)
         getEnemy()
+        
+        endGame()
     }, [rounds])
 
     const getEnemy = () => {
@@ -72,11 +75,24 @@ const GlobalBattle = (props) =>{
     }
 
     const changeRound = () => {
-        if(response != "Rodada Empatada"){
-            return setRounds(rounds + 1)
-        }else{
-            setRounds(rounds)
+        return setRounds(rounds + 1)
+    }
+    
+    const endGame = () => {
+        if(rounds > 10){
+
+            setPlayerPoints(0)
+            setEnemyPoints(0)
+            setRounds(0)
+    
+            if(playerPoints > enemyPoints){
+                alert("As 10 rodadas aconteceram e Você venceu!! Espero que tenha gostado")
+            }else{
+                alert("As 10 rodadas passaram e infelizmente você perdeu :(")
+            }
+    
         }
+
     }
 
     const Capitalize = (str) => {

@@ -23,6 +23,16 @@ export const CardBattle = styled.div`
         text-align: center;
     }
 
+    @media only screen and (max-width: 480px) {
+        width: 200px;
+        height:auto;
+        padding:0 0.5rem;
+        grid-template-rows: 20% 65% 15%;
+        padding:1rem 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
 `
 
 export const ImageBattle = styled.div`
@@ -30,6 +40,10 @@ export const ImageBattle = styled.div`
     justify-content: center;
     background-color: white;
     border: solid 1px black;
+
+    @media only screen and (max-width: 480px) {
+        align-items: center;
+    }
 
 `
 
@@ -50,6 +64,15 @@ export const StatsDiv = styled.button`
         background-color: ${orangeRed};
 
     }
+
+    
+    @media only screen and (max-width: 480px) {
+        height: 20px;
+        align-items: flex-end;
+        margin-bottom: 0;
+        
+    }
+
 `
 
 export const StatsSpace = styled.div`
@@ -57,6 +80,14 @@ export const StatsSpace = styled.div`
     grid-template-rows: 15% 15% 15% 15% 15%;
     grid-gap: 0.2rem;
     margin-top: 1rem;
+
+    
+    @media only screen and (max-width: 480px) {
+        grid-template-rows: 10% 10% 10% 10% 10%;
+        margin-top: 0;
+        display:flex;
+        flex-direction: column;
+    }
 
 
 `

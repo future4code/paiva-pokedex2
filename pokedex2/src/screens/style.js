@@ -62,6 +62,10 @@ export const BattleArena = styled.div`
     display:flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @media only screen and (max-width: 480px) {
+        flex-direction: column-reverse;
+    }
 `
 
 export const Rounds = styled.div`
@@ -89,4 +93,9 @@ export const Scores = styled.div`
 export const Score = styled.h3`
     margin-right:1rem;
 
+`
+
+export const BattleArea = styled.div`
+    display:grid;
+    grid-template-rows: 45% 75%;
 `
