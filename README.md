@@ -7,9 +7,10 @@ Nome dos integrantes:
 - Silvio Gabriel Pimentel Dias: Sistema de batalha e layout para PC e Mobile da batalha, resgate de dados da API, Paginação, parte do Layout
  
 
-Link do Surge: www.link.com.br
+Link do Surge: http://obsolete-stranger.surge.sh/
 
 O que funciona:
+
  Pokémon aparece em lista
  É possivel ver detalhes do Pokémon
  É possível inserir Pokémon em sua pokedex
@@ -18,4 +19,3 @@ O que funciona:
  
 O que não funciona: 
  Paginação não apresenta número de paginas de forma dinamica
- 
