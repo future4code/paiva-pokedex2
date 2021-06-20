@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import GlobalBattle from '../global/GlobalStateBattle';
 import React from 'react'
 import Home from '../pages/Home'
 import Pokedex from '../pages/Pokedex'
 import Details from '../pages/Details'
 import Error from "../pages/Error"
 import Battle from '../pages/Battle'
+
 
 const Routes = () => {
     return (
@@ -21,7 +23,9 @@ const Routes = () => {
                     <Details />
                 </Route>
                 <Route exact path="/battle" >
-                    <Battle />
+                    <GlobalBattle>
+                        <Battle />
+                    </GlobalBattle>
                 </Route>
                 <Route>
                     <Error />

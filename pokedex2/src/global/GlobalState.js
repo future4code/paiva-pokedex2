@@ -22,7 +22,7 @@ const GlobalState = (props) => {
             console.log(offset)
         }
         axios
-            .get(`${BASE_URL}?limit=21&offset=${offset}`)
+            .get(`${BASE_URL}?limit=20&offset=${offset}`)
             .then((response) => {
                 setPokemon(response.data.results)
             })

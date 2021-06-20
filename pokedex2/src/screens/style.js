@@ -56,3 +56,37 @@ export const PaginationArea = styled.div`
 export const backGroundBody = styled.main`
 background-color: ${cream};
 `
+
+export const BattleArena = styled.div`
+    height:50vh;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+`
+
+export const Rounds = styled.div`
+    display:flex;
+    justify-content: center;
+    margin:1rem;
+`
+
+export const Board = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+
+`
+
+export const Scores = styled.div`
+    margin-top:2rem;
+    display:flex;
+    text-align:center;
+    justify-content: center;
+
+`
+
+export const Score = styled.h3`
+    margin-right:1rem;
+
+`
