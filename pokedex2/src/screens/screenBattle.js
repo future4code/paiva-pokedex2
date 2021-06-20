@@ -1,47 +1,39 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { BASE_URL } from '../constant/url'
-import useDetails from '../hooks/useDetails'
+import React, { useContext } from 'react'
+import BattleCard from '../components/BattleCard/BattleCard'
+import EnemyCard from '../components/BattleCard/EnemyCard';
+import { GlobalStateBattle } from '../global/GlobalStateContext';
+import {BattleArena, Rounds,Board,Scores,Score,BattleArea} from "./style"
 
 function ScreenBattle(props) {
-    const [enemy,setEnemy] = useState([{}])
-    const [pokeDetails,getPokeDetail] = useDetails()
-    const params = useParams()
-
-    useEffect(() => {
-        getPokeDetail(params.name)
-        getEnemy()
-    }, [])
-
-    const getEnemy = () => {
-        const pokeNumero = Math.floor(Math.random(1180) * 11);
-        console.log(pokeNumero)
-        axios
-        .get(`${BASE_URL}/${pokeNumero}`)
-        .then((response) => {
-            setEnemy(response.data)
-        })
-        .catch((err) => {
-            alert(err.message)
-        })
-    }
-
-    console.log(pokeDetails)
-
-    const enemyStats = enemy.stats && enemy.stats.map((stat) => {
-        let status = {}
-        return status = {[stat.stat.name]:stat.base_stat}
-    })
-
-    console.log(enemyStats)
+    const {choiceMade,changeRound,playerPoints,enemyPoints,rounds,response} = useContext(GlobalStateBattle)
     return (
-        <div>
-            <h1>Batalha</h1>
-            <h2>{pokeDetails.name}</h2>
-            <h2>{enemy.name}</h2>
-            <button onClick = {enemyStats}>teste</button>
-        </div>
+        <BattleArea>
+            <div>
+                <Rounds>
+                    <h5>Escolha o status do seu Pokémon, se for maior que o do inimigo, você vence!!</h5>
+                    <h1>Rodadas: {rounds}</h1>
+                </Rounds>
+                
+                <Board>
+                    <h1>Ponto</h1>
+                    <Scores>
+                        <Score>Jogador: {playerPoints}</Score>
+                        <Score>Adversário: {enemyPoints}</Score>
+                        
+                    </Scores>
+                    {response !== "" && <h2>{response}</h2>}
+                </Board>
+
+            </div>
+
+
+            <BattleArena>
+                <BattleCard/>
+                    {choiceMade ? (<button onClick = {() => changeRound()}>Novo Round</button>): (<h1>X</h1>)}
+                <EnemyCard/>
+            </BattleArena>
+        </BattleArea>
+
     )
 }
 

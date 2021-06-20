@@ -8,7 +8,6 @@ function Header(props) {
     
     const {pokedex, setPokedex} = useContext(GlobalStateContext)
     const history = useHistory()
-    console.log(history)
     useEffect(() => {
         checkPokedex()
     } , [pokedex])
@@ -33,6 +32,7 @@ function Header(props) {
 
 
     return (
+        <div>
             <HeaderArea>
                 {props.pagina !== "Home" && (
 
@@ -49,6 +49,7 @@ function Header(props) {
                     </LeftHeader> 
                 )}
 
+
                 <h3>{props.pagina}</h3>
                 {props.pagina === "Detalhes" && ( 
                     <RightButton onClick={()=> checkPokedex() ?
@@ -57,6 +58,13 @@ function Header(props) {
                          {checkPokedex() ? "Remover da Pokedex":"Adicionar a Pokedex"}</RightButton>)}
               
             </HeaderArea>
+            
+            {props.pagina !== "Batalha Super Trunfo Pokémon" && (
+                    <button onClick={() => goTo(props.h,"/battle")}>
+                        Jogar Batalha Pokémon
+                    </button> 
+                )}
+            </div>
     )
 }
 

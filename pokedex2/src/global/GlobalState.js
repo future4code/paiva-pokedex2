@@ -1,8 +1,8 @@
 import React from 'react'
-import { GlobalStateContext } from "./GlobalStateContext"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { BASE_URL } from "../constant/url"
+import { GlobalStateContext } from "./GlobalStateContext"
 
 const GlobalState = (props) => {
     const [pokemon, setPokemon] = useState([])
@@ -11,18 +11,17 @@ const GlobalState = (props) => {
     const [pageNumber,setPageNumber] = useState(0)
 
     useEffect(() => {
-        getPokemon(pageNumber)
+        getPokemon(pageNumber) // Pega 20 pokémon 
     }, [pageNumber])
 
     const getPokemon = (pageNumber) => {
         setPokeDetails([])
         let offset = 0
-        if(pageNumber > 1){
+        if(pageNumber > 1){ //Se pagina maior quie 1, Offset recebe calculo para restatar mais pokémon
             offset = (20*pageNumber) -20
-            console.log(offset)
         }
         axios
-            .get(`${BASE_URL}?limit=21&offset=${offset}`)
+            .get(`${BASE_URL}?limit=20&offset=${offset}`)
             .then((response) => {
                 setPokemon(response.data.results)
             })
@@ -32,7 +31,7 @@ const GlobalState = (props) => {
     }
 
 
-    const getPokeDetail = (name) => {
+    const getPokeDetail = (name) => { // Resgata pokémon com detalhes
         const detailList = []
 
         name.forEach((poke) => {
@@ -62,7 +61,7 @@ const GlobalState = (props) => {
         
     }, [pokemon])
 
-    const Capitalize = (str) => {
+    const Capitalize = (str) => { //Transforma primeira letra em maiusculo 
         return str.charAt(0).toUpperCase() + str.slice(1);
         }   
 

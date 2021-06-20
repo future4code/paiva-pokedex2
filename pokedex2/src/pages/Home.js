@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from "../components/header/header"
 import { useHistory } from "react-router-dom";
-import { goTo } from "../router/Coordinator";
 import ScreenPokemon from '../screens/screenPokemon';
 import {AreaHome} from "./style"
 

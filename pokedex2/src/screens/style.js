@@ -2,12 +2,15 @@ import styled from "styled-components"
 import { cream } from "../constant/colors"
 import { spriteSize } from "../constant/spriteSize"
 
-
-
 export const AreaPokeCards = styled.div`
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-rows: auto;
+
+    @media only screen and (max-width: 480px) {
+        display:flex;
+        flex-direction: column;
+    }
 `
 
 export const AreaCard = styled.div`
@@ -55,4 +58,47 @@ export const PaginationArea = styled.div`
 `
 export const backGroundBody = styled.main`
 background-color: ${cream};
+`
+
+export const BattleArena = styled.div`
+    height:50vh;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @media only screen and (max-width: 480px) {
+        flex-direction: column-reverse;
+    }
+`
+
+export const Rounds = styled.div`
+    display:flex;
+    justify-content: center;
+    margin:1rem;
+`
+
+export const Board = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+
+`
+
+export const Scores = styled.div`
+    margin-top:2rem;
+    display:flex;
+    text-align:center;
+    justify-content: center;
+
+`
+
+export const Score = styled.h3`
+    margin-right:1rem;
+
+`
+
+export const BattleArea = styled.div`
+    display:grid;
+    grid-template-rows: 45% 75%;
 `
