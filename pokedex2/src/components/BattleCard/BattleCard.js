@@ -7,6 +7,8 @@ function BattleCard(props) {
     const {pokeDetails,Capitalize} = useContext(GlobalStateBattle)
     const [mobileStatus,setMobileStatus] = useState(false)
 
+    alert("Caso esteja usando modo mobile do navegador, atualize a pagina para carregar versão Mobile")
+
     useEffect(() => [
         setMobileStatus(false)
     ], [pokeDetails])
