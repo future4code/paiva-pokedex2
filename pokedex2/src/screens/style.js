@@ -92,7 +92,6 @@ export const Board = styled.div`
 `
 
 export const Scores = styled.div`
-    margin-top:2rem;
     display:flex;
     text-align:center;
     justify-content: center;
@@ -106,5 +105,5 @@ export const Score = styled.h3`
 
 export const BattleArea = styled.div`
     display:grid;
-    grid-template-rows: 45% 75%;
+    grid-template-rows: 50% 50%;
 `
