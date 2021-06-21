@@ -92,7 +92,6 @@ export const Board = styled.div`
 `
 
 export const Scores = styled.div`
-    margin-top:2rem;
     display:flex;
     text-align:center;
     justify-content: center;
