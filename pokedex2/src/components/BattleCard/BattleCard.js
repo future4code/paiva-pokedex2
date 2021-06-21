@@ -6,8 +6,11 @@ import { CardBattle, ImageBattle } from "./style"
 function BattleCard(props) {
     const {pokeDetails,Capitalize} = useContext(GlobalStateBattle)
     const [mobileStatus,setMobileStatus] = useState(false)
+    
+    useEffect(() => {
+        alert("Caso esteja usando modo mobile do navegador, atualize a pagina para carregar versão Mobile")
+    },[])
 
-    alert("Caso esteja usando modo mobile do navegador, atualize a pagina para carregar versão Mobile")
 
     useEffect(() => [
         setMobileStatus(false)
