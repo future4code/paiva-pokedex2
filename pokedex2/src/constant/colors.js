@@ -1,0 +1,6 @@
+export const orangeRed = "#FF4F3D"
+export const laserLemon ="#FFFF65"
+export const dodgerBlue ="#348BFF"
+export const white ="#FFFFFF"
+export const cream ="#FFFFD2"
+export const gray ="#f1f1f1"
